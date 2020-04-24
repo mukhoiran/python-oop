@@ -24,6 +24,11 @@ class Player:
 
 #inhertance class
 class ArgentinaPlayer(Player):
+    def __init__(self, param1, param2):
+        # Player.__init__(self, param1, param2)
+        super().__init__(param1, param2)
+        print('argentina player')
+
     def setAge(self, age):
         self.age = age
         return self.age
