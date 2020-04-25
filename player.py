@@ -6,6 +6,7 @@ class Player:
     # name = 'Mbappe'
     name = ''
     speed = ''
+    job = 'Football player'
 
     def __init__(self, param1, param2):
         self.name = param1
@@ -26,6 +27,14 @@ class Player:
 
     def getAge(self):
         return self.__age
+
+    @staticmethod
+    def retiredIn(age):
+        return str(40 - age)
+
+    @classmethod
+    def generalInfo(cls):
+        return cls.job + ' will retired in 40 years'
 
 #inhertance class
 class ArgentinaPlayer(Player):
@@ -65,3 +74,9 @@ player2 = SpanyolPlayer('Iniesta','87')
 print(player.getName() + " have skill "+ player.getSkill())
 print(player2.getName() + " have skill "+ player2.getSkill())
 print(player.getAge())
+
+# Call static method (no need declare object)
+print('Retired on ' + Player.retiredIn(25))
+
+# Call class method (no need declare object)
+print(Player.generalInfo())
