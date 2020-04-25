@@ -10,6 +10,8 @@ class Player:
     def __init__(self, param1, param2):
         self.name = param1
         self.speed = param2
+        # private variable (use __)
+        self.__age = 23
 
     def getName(self):
         # self.name = param
@@ -21,6 +23,9 @@ class Player:
 
     def getSkill(self):
         return 'balance'
+
+    def getAge(self):
+        return self.__age
 
 #inhertance class
 class ArgentinaPlayer(Player):
@@ -59,3 +64,4 @@ player2 = SpanyolPlayer('Iniesta','87')
 # print(player.getName() + " have age " + player.setAge('26'))
 print(player.getName() + " have skill "+ player.getSkill())
 print(player2.getName() + " have skill "+ player2.getSkill())
+print(player.getAge())
