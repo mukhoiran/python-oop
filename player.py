@@ -36,6 +36,10 @@ class Player:
     def generalInfo(cls):
         return cls.job + ' will retired in 40 years'
 
+    @property
+    def playerInfo(self):
+        return self.name + ' is ' + self.speed
+
 #inhertance class
 class ArgentinaPlayer(Player):
     def __init__(self, param1, param2):
@@ -70,6 +74,7 @@ class IndonesianPlayer(Player):
 
 player = ArgentinaPlayer('Dybala','86')
 player2 = SpanyolPlayer('Iniesta','87')
+player3 = Player('Messi','10')
 # print(player.getName() + " have age " + player.setAge('26'))
 print(player.getName() + " have skill "+ player.getSkill())
 print(player2.getName() + " have skill "+ player2.getSkill())
@@ -80,3 +85,6 @@ print('Retired on ' + Player.retiredIn(25))
 
 # Call class method (no need declare object)
 print(Player.generalInfo())
+
+#Call property
+print(player3.playerInfo)
